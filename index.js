@@ -41,7 +41,7 @@ async function run(){
                 res.send(result);
             })
 
-            app.post('/login', async(req, res) =>{
+            app.post('/inventorypage', async(req, res) =>{
                 const user = req.body;
                 const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECTRET, {
                     expiresIn: '1d'
