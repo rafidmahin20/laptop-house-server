@@ -20,13 +20,6 @@ async function run(){
             const eventCollection = client.db("appleProduct").collection("events");
             const productListCollection = client.db("appleProduct").collection("productList");
 
-            app.get('/inventorypage', async(req, res) =>{
-                const query ={};
-                const cursor = productCollection.find(query);
-                const products = await cursor.toArray();
-                res.send(products);
-            })
-
             app.get('/inventorypage', async (req, res) =>{
                 const query = req.query;
                 const cursor = productCollection.find(query);
